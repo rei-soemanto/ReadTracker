@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var iOSConnectivityManager: iOSConnectivity = iOSConnectivity()
+    @State private var showAddBookView: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Text("Welcome to ReadTracker Watch OS!")
+                NavigationLink("Add new book", value: "")
+                    .padding(.top, 15)
+            }
+            .navigationDestination(for: String.self, destination: { value in
+                AddNewBookView(iOSConnectivityManager: iOSConnectivityManager, isPresented: $showAddBookView)
+            })
         }
-        .padding()
     }
 }
 

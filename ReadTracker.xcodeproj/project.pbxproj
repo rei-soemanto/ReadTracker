@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		043429BE2F7E413400593579 /* ReadTrackerWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0434299E2F7E413300593579 /* ReadTrackerWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04342A082F7E4C4600593579 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04342A072F7E4C4600593579 /* WatchConnectivity.framework */; };
+		04342A0A2F7E4C5D00593579 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04342A092F7E4C5D00593579 /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,20 @@
 		0434299E2F7E413300593579 /* ReadTrackerWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReadTrackerWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		043429AA2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReadTrackerWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		043429B42F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReadTrackerWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04342A072F7E4C4600593579 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		04342A092F7E4C5D00593579 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS26.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		048A677F2F48395400706A2A /* ReadTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		04CAFE102F7EA5E100742F9D /* Exceptions for "ReadTracker" folder in "ReadTrackerWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model/BookModel.swift,
+			);
+			target = 0434299D2F7E413300593579 /* ReadTrackerWatchApp Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0434299F2F7E413300593579 /* ReadTrackerWatchApp Watch App */ = {
@@ -73,6 +87,9 @@
 		};
 		048A67812F48395400706A2A /* ReadTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04CAFE102F7EA5E100742F9D /* Exceptions for "ReadTracker" folder in "ReadTrackerWatchApp Watch App" target */,
+			);
 			path = ReadTracker;
 			sourceTree = "<group>";
 		};
@@ -83,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04342A0A2F7E4C5D00593579 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +122,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04342A082F7E4C4600593579 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04342A062F7E4C4500593579 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04342A092F7E4C5D00593579 /* WatchConnectivity.framework */,
+				04342A072F7E4C4600593579 /* WatchConnectivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		048A67762F48395400706A2A = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +145,7 @@
 				0434299F2F7E413300593579 /* ReadTrackerWatchApp Watch App */,
 				043429AD2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests */,
 				043429B72F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests */,
+				04342A062F7E4C4500593579 /* Frameworks */,
 				048A67802F48395400706A2A /* Products */,
 			);
 			sourceTree = "<group>";

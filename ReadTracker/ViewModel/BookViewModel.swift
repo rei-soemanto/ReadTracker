@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import WatchConnectivity
 
-class BookViewModel: ObservableObject {
+class BookViewModel: NSObject, ObservableObject, WCSessionDelegate {
     @Published var books = [Book]()
     var session: WCSession
     
@@ -27,7 +27,7 @@ class BookViewModel: ObservableObject {
         ]
     }
     
-    func session(_ session: WCSession, acticationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
         
     }
     
