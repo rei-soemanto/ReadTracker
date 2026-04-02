@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ReadTrackerApp: App {
+    @StateObject private var bookViewModel = BookViewModel()
+    @StateObject private var dailyReadViewModel = DailyReadViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(bookViewModel)
+                .environmentObject(dailyReadViewModel)
         }
     }
 }

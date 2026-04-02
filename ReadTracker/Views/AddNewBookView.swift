@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct AddNewBookView: View {
+    @EnvironmentObject private var bookViewModel: BookViewModel
+    
     @State var title = ""
     @State var author = ""
     @State var genre = ""
+    @State var saveButtonDisabled: Bool = true
+    
+    @Binding var isAddBook: Bool
     
     let genres = ["Fantasy", "Romance", "Thriller", "Science Fiction"]
-    @State var selectedGenre = "Fantasy"
     
     var body: some View {
         VStack{
@@ -22,6 +26,13 @@ struct AddNewBookView: View {
                 Text("Title       : ")
                     .padding()
                 TextField("The Book Title", text: $title)
+                    .onChange(of: title, {
+                        if !title.isEmpty && !author.isEmpty && !genre.isEmpty {
+                            saveButtonDisabled = false
+                        } else {
+                            saveButtonDisabled = true
+                        }
+                    })
                     .padding()
                 Spacer()
             }
@@ -30,6 +41,13 @@ struct AddNewBookView: View {
                 Text("Author   : ")
                     .padding()
                 TextField("Enter the author's name", text: $author)
+                    .onChange(of: author, {
+                        if !title.isEmpty && !author.isEmpty && !genre.isEmpty {
+                            saveButtonDisabled = false
+                        } else {
+                            saveButtonDisabled = true
+                        }
+                    })
                     .padding()
                 Spacer()
             }
@@ -37,10 +55,17 @@ struct AddNewBookView: View {
             HStack{
                 Text("Genre    : ")
                     .padding()
-                Picker("Genre", selection: $selectedGenre) {
-                    ForEach(genres, id: \.self) {genre in
-                        Text(genre)
+                Picker("Genre", selection: $genre) {
+                    ForEach(genres, id: \.self) {
+                        Text($0)
                     }
+                    .onChange(of: genre, {
+                        if !title.isEmpty && !author.isEmpty && !genre.isEmpty {
+                            saveButtonDisabled = false
+                        } else {
+                            saveButtonDisabled = true
+                        }
+                    })
                     .padding()
                 }
                 .pickerStyle(.menu)
@@ -57,15 +82,21 @@ struct AddNewBookView: View {
             
             HStack{
                 Button("Cancel"){
-                    
+                    isAddBook = false
                 }
                 .tint(.red)
                 .buttonStyle(.borderedProminent)
                 
                 Button("Save"){
+                    bookViewModel.addNewBook(title: title, author: author, image: "harryPotter", genre: genre)
                     
+                    title = ""
+                    author = ""
+                    genre = "Fantasy"
+                    isAddBook = false
                 }
                 .buttonStyle(.borderedProminent)
+                .disabled(saveButtonDisabled)
             }.padding(.top, 50.0)
             
             Spacer()
@@ -77,6 +108,7 @@ struct AddNewBookView: View {
 
 #Preview {
     NavigationStack {
-        AddNewBookView()
+        AddNewBookView(isAddBook: .constant(true))
+            .environmentObject(BookViewModel())
     }
 }

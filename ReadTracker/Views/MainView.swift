@@ -30,4 +30,6 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environmentObject(BookViewModel())
+        .environmentObject(DailyReadViewModel())
 }

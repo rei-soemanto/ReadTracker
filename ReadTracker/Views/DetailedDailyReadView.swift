@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct DetailedDailyReadView: View {
+    @EnvironmentObject var dailyReadViewModel: DailyReadViewModel
+    
     var body: some View {
         ScrollView {
-            DetailedReadCardView()
-            DetailedReadCardView()
-            DetailedReadCardView()
+            ForEach(dailyReadViewModel.dailyReads, id: \.self) { dailyRead in
+                DetailedReadCardView(dailyRead: dailyRead)
+            }
         }
     }
 }
 
 #Preview {
     DetailedDailyReadView()
+        .environmentObject(DailyReadViewModel())
 }

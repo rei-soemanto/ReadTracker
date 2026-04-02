@@ -1,15 +1,16 @@
 //
-//  BookModel.swift
-//  MADCourse2025
+//  DailyReadModel.swift
+//  ReadTracker
 //
-//  Created by Theresia Saputri on 06/02/25.
+//  Created by Rei Soemanto on 02/04/26.
 //
 
 import Foundation
 
-struct Book: Identifiable {
+struct Book: Identifiable, Hashable {
     let id = UUID()
-    let title: String
-    let author: String
-    let image: String
+    var title: String
+    var author: String
+    var image: String
+    var genre: String
 }

@@ -6,11 +6,71 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		043429BE2F7E413400593579 /* ReadTrackerWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0434299E2F7E413300593579 /* ReadTrackerWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		043429AB2F7E413400593579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048A67772F48395400706A2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0434299D2F7E413300593579;
+			remoteInfo = "ReadTrackerWatchApp Watch App";
+		};
+		043429B52F7E413400593579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048A67772F48395400706A2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0434299D2F7E413300593579;
+			remoteInfo = "ReadTrackerWatchApp Watch App";
+		};
+		043429BC2F7E413400593579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048A67772F48395400706A2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0434299D2F7E413300593579;
+			remoteInfo = "ReadTrackerWatchApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		043429C22F7E413400593579 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				043429BE2F7E413400593579 /* ReadTrackerWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0434299E2F7E413300593579 /* ReadTrackerWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReadTrackerWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		043429AA2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReadTrackerWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		043429B42F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReadTrackerWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A677F2F48395400706A2A /* ReadTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		0434299F2F7E413300593579 /* ReadTrackerWatchApp Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ReadTrackerWatchApp Watch App";
+			sourceTree = "<group>";
+		};
+		043429AD2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ReadTrackerWatchApp Watch AppTests";
+			sourceTree = "<group>";
+		};
+		043429B72F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ReadTrackerWatchApp Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		048A67812F48395400706A2A /* ReadTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ReadTracker;
@@ -19,6 +79,27 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0434299B2F7E413300593579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043429A72F7E413400593579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043429B12F7E413400593579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		048A677C2F48395400706A2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				048A67812F48395400706A2A /* ReadTracker */,
+				0434299F2F7E413300593579 /* ReadTrackerWatchApp Watch App */,
+				043429AD2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests */,
+				043429B72F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests */,
 				048A67802F48395400706A2A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				048A677F2F48395400706A2A /* ReadTracker.app */,
+				0434299E2F7E413300593579 /* ReadTrackerWatchApp Watch App.app */,
+				043429AA2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests.xctest */,
+				043429B42F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +135,74 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0434299D2F7E413300593579 /* ReadTrackerWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043429BF2F7E413400593579 /* Build configuration list for PBXNativeTarget "ReadTrackerWatchApp Watch App" */;
+			buildPhases = (
+				0434299A2F7E413300593579 /* Sources */,
+				0434299B2F7E413300593579 /* Frameworks */,
+				0434299C2F7E413300593579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0434299F2F7E413300593579 /* ReadTrackerWatchApp Watch App */,
+			);
+			name = "ReadTrackerWatchApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "ReadTrackerWatchApp Watch App";
+			productReference = 0434299E2F7E413300593579 /* ReadTrackerWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		043429A92F7E413400593579 /* ReadTrackerWatchApp Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043429C32F7E413400593579 /* Build configuration list for PBXNativeTarget "ReadTrackerWatchApp Watch AppTests" */;
+			buildPhases = (
+				043429A62F7E413400593579 /* Sources */,
+				043429A72F7E413400593579 /* Frameworks */,
+				043429A82F7E413400593579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				043429AC2F7E413400593579 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				043429AD2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests */,
+			);
+			name = "ReadTrackerWatchApp Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "ReadTrackerWatchApp Watch AppTests";
+			productReference = 043429AA2F7E413400593579 /* ReadTrackerWatchApp Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		043429B32F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043429C62F7E413400593579 /* Build configuration list for PBXNativeTarget "ReadTrackerWatchApp Watch AppUITests" */;
+			buildPhases = (
+				043429B02F7E413400593579 /* Sources */,
+				043429B12F7E413400593579 /* Frameworks */,
+				043429B22F7E413400593579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				043429B62F7E413400593579 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				043429B72F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests */,
+			);
+			name = "ReadTrackerWatchApp Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "ReadTrackerWatchApp Watch AppUITests";
+			productReference = 043429B42F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		048A677E2F48395400706A2A /* ReadTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 048A678A2F48395500706A2A /* Build configuration list for PBXNativeTarget "ReadTracker" */;
@@ -55,10 +210,12 @@
 				048A677B2F48395400706A2A /* Sources */,
 				048A677C2F48395400706A2A /* Frameworks */,
 				048A677D2F48395400706A2A /* Resources */,
+				043429C22F7E413400593579 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				043429BD2F7E413400593579 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				048A67812F48395400706A2A /* ReadTracker */,
@@ -80,6 +237,17 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					0434299D2F7E413300593579 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					043429A92F7E413400593579 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 0434299D2F7E413300593579;
+					};
+					043429B32F7E413400593579 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 0434299D2F7E413300593579;
+					};
 					048A677E2F48395400706A2A = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -100,11 +268,35 @@
 			projectRoot = "";
 			targets = (
 				048A677E2F48395400706A2A /* ReadTracker */,
+				0434299D2F7E413300593579 /* ReadTrackerWatchApp Watch App */,
+				043429A92F7E413400593579 /* ReadTrackerWatchApp Watch AppTests */,
+				043429B32F7E413400593579 /* ReadTrackerWatchApp Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0434299C2F7E413300593579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043429A82F7E413400593579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043429B22F7E413400593579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		048A677D2F48395400706A2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +307,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0434299A2F7E413300593579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043429A62F7E413400593579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043429B02F7E413400593579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		048A677B2F48395400706A2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +337,181 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		043429AC2F7E413400593579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0434299D2F7E413300593579 /* ReadTrackerWatchApp Watch App */;
+			targetProxy = 043429AB2F7E413400593579 /* PBXContainerItemProxy */;
+		};
+		043429B62F7E413400593579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0434299D2F7E413300593579 /* ReadTrackerWatchApp Watch App */;
+			targetProxy = 043429B52F7E413400593579 /* PBXContainerItemProxy */;
+		};
+		043429BD2F7E413400593579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0434299D2F7E413300593579 /* ReadTrackerWatchApp Watch App */;
+			targetProxy = 043429BC2F7E413400593579 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		043429C02F7E413400593579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ND5QM3KQN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ReadTrackerWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ReiSoemanto.ReadTracker;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ReiSoemanto.ReadTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		043429C12F7E413400593579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ND5QM3KQN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ReadTrackerWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ReiSoemanto.ReadTracker;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ReiSoemanto.ReadTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		043429C42F7E413400593579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ND5QM3KQN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ReiSoemanto.ReadTrackerWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadTrackerWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReadTrackerWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		043429C52F7E413400593579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ND5QM3KQN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ReiSoemanto.ReadTrackerWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadTrackerWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReadTrackerWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		043429C72F7E413400593579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ND5QM3KQN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ReiSoemanto.ReadTrackerWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ReadTrackerWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		043429C82F7E413400593579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ND5QM3KQN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ReiSoemanto.ReadTrackerWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ReadTrackerWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 		048A67882F48395500706A2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +700,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		043429BF2F7E413400593579 /* Build configuration list for PBXNativeTarget "ReadTrackerWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043429C02F7E413400593579 /* Debug */,
+				043429C12F7E413400593579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		043429C32F7E413400593579 /* Build configuration list for PBXNativeTarget "ReadTrackerWatchApp Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043429C42F7E413400593579 /* Debug */,
+				043429C52F7E413400593579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		043429C62F7E413400593579 /* Build configuration list for PBXNativeTarget "ReadTrackerWatchApp Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043429C72F7E413400593579 /* Debug */,
+				043429C82F7E413400593579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		048A677A2F48395400706A2A /* Build configuration list for PBXProject "ReadTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

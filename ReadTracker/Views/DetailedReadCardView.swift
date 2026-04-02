@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct DetailedReadCardView: View {
+    let dailyRead: DailyRead
+    
+    @EnvironmentObject var dailyReadViewModel: DailyReadViewModel
+    
     var body: some View {
         ZStack{
             Rectangle()
@@ -21,22 +25,22 @@ struct DetailedReadCardView: View {
                     VStack(spacing: 20){
                         HStack{
                             Text("Title      : ")
-                            Text("Harry Potter and The Sorcerer's Stone")
+                            Text(dailyRead.book.title)
                             Spacer()
                         }
                         HStack{
                             Text("Author  : ")
-                            Text("J.K. Rowling")
+                            Text(dailyRead.book.author)
                             Spacer()
                         }
                         HStack{
                             Text("Genre   : ")
-                            Text("Fantasy")
+                            Text(dailyRead.book.genre)
                             Spacer()
                         }
                     }.padding()
                     
-                    Image(.harryPotter)
+                    Image(dailyRead.book.image)
                         .resizable()
                         .frame(width: 100, height: 160)
                         .padding(.trailing, 30)
@@ -45,7 +49,7 @@ struct DetailedReadCardView: View {
                 HStack {
                     Text("Duration : ")
                         .padding(.leading, 22)
-                    Text("00 Hours 24 Mins 10 Sec")
+                    Text("\(dailyReadViewModel.getHours(seconds: dailyRead.readTimeInSeconds)) Hours \(dailyReadViewModel.getMinutes(seconds: dailyRead.readTimeInSeconds)) Mins \(dailyReadViewModel.getSeconds(seconds: dailyRead.readTimeInSeconds)) Sec")
                     Spacer()
                 }.padding(.bottom, 15)
                 
@@ -53,7 +57,7 @@ struct DetailedReadCardView: View {
                     Rectangle()
                         .fill(Color(hue: 1.0, saturation: 0.015, brightness: 0.894))
                         .frame(width: 317, height: 70)
-                    Text("So good, I hope I have more time to read the book")
+                    Text(dailyRead.note ?? "No Note")
                 }.padding()
             }
         }.padding([.leading, .top, .trailing], 10)
@@ -61,5 +65,6 @@ struct DetailedReadCardView: View {
 }
 
 #Preview {
-    DetailedReadCardView()
+    DetailedReadCardView(dailyRead: DailyRead(book: Book(title: "Test", author: "Test", image: "harryPotter", genre: "Test"), readDate: Date(), readTimeInSeconds: 300, note: "Test"))
+        .environmentObject(DailyReadViewModel())
 }

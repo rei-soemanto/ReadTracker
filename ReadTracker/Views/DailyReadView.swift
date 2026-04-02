@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DailyReadView: View {
+    @EnvironmentObject var dailyReadViewModel: DailyReadViewModel
+    
     @State var dailyGoal = 5.0
     @State var isAddActivity = false
     @State private var selectedDate = Date()
@@ -52,20 +54,10 @@ struct DailyReadView: View {
                 
                 HStack {
                     Spacer()
-                    DailyIndicatorItem(dayIndicator: 5)
-                    Spacer()
-                    DailyIndicatorItem(dayIndicator: 4)
-                    Spacer()
-                    DailyIndicatorItem(dayIndicator: 4)
-                    Spacer()
-                    DailyIndicatorItem(dayIndicator: 3)
-                    Spacer()
-                    DailyIndicatorItem(dayIndicator: 2)
-                    Spacer()
-                    DailyIndicatorItem(dayIndicator: 0)
-                    Spacer()
-                    DailyIndicatorItem(dayIndicator: 0)
-                    Spacer()
+                    ForEach(dailyReadViewModel.getWholeWeekReadStats(byDate: selectedDate), id:\.self) { status in
+                        DailyIndicatorItem(dayIndicator: status)
+                        Spacer()
+                    }
                 }
                 
                 Spacer()
@@ -83,12 +75,16 @@ struct DailyReadView: View {
                         .trim(from: 0.0, to: progress)
                         .stroke(.blue, style: StrokeStyle(lineWidth: 30, lineCap: .round, lineJoin: .round))
                         .rotationEffect(Angle(degrees: 270.0))
+                        .animation(.easeInOut(duration: 0.5), value: dailyGoal)
                     
                     VStack {
                         Text("Daily Goal").font(.largeTitle).padding()
                         Text("\(Int(dailyGoal)) /30 mins").font(.title2).padding()
                     }
-                }.frame(width: 340, height: 340)
+                }.onAppear {
+                    dailyGoal = Double(dailyReadViewModel.getTotalMinutesOnCurrentDate(currentDate: selectedDate))
+                }
+                .frame(width: 340, height: 340)
                 
                 Spacer()
                 
@@ -120,6 +116,19 @@ extension DailyReadView {
         }
     }
     
+    private var viewDetailButton: some View {
+        ZStack {
+            ZStack {
+                Rectangle()
+                    .fill(Color(red: 0.974, green: 0.964, blue: 0.965))
+                    .frame(width: 60, height: 60)
+                Image(systemName: "doc.richtext")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+        }.padding()
+    }
+    
     private var selectDateButton: some View {
         ZStack {
             Button (action: {
@@ -147,21 +156,10 @@ extension DailyReadView {
             }
         }.padding()
     }
-    
-    private var viewDetailButton: some View {
-        ZStack {
-            ZStack {
-                Rectangle()
-                    .fill(Color(red: 0.974, green: 0.964, blue: 0.965))
-                    .frame(width: 60, height: 60)
-                Image(systemName: "doc.richtext")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            }
-        }.padding()
-    }
 }
 
 #Preview {
     DailyReadView()
+        .environmentObject(BookViewModel())
+        .environmentObject(DailyReadViewModel())
 }

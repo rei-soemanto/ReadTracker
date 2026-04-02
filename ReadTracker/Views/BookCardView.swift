@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BookCardView: View {
+    var book: Book
+    
     var body: some View {
         ZStack{
             Rectangle()
@@ -20,12 +22,12 @@ struct BookCardView: View {
                 VStack(spacing: 20){
                     HStack{
                         Text("Title      : ")
-                        Text("Harry Potter and The Sorcerer's Stone")
+                        Text(book.title)
                         Spacer()
                     }
                     HStack{
                         Text("Author  : ")
-                        Text("J.K. Rowling")
+                        Text(book.author)
                         Spacer()
                     }
                     HStack{
@@ -35,7 +37,7 @@ struct BookCardView: View {
                     }
                 }.padding()
                 
-                Image(.harryPotter)
+                Image(book.image)
                     .resizable()
                     .frame(width: 100, height: 160)
                     .padding(.trailing, 30)
@@ -45,5 +47,5 @@ struct BookCardView: View {
 }
 
 #Preview {
-    BookCardView()
+    BookCardView(book: Book(title: "Harry Potter and The Sorcerer's Stone", author: "J.K. Rowling", image: "harryPotter", genre: "Fantasy"))
 }
