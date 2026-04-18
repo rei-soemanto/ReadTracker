@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SplashScreen: View {
-    @State private var isActive = true
+    @State private var isActive = false
     
     @State private var iconOffset: CGFloat = 50
     @State private var iconOpacity: Double = 0
@@ -63,7 +63,7 @@ struct SplashScreen: View {
     }
     
     private func animateSequence() {
-        withAnimation(.spring(response: 0.75, dampingFraction: 0.6,).delay(0.2)) {
+        withAnimation(.spring(response: 0.75, dampingFraction: 0.6).delay(0.2)) {
             circleScale = 1.0
         }
         
