@@ -88,7 +88,11 @@ struct AddNewBookView: View {
                 .buttonStyle(.borderedProminent)
                 
                 Button("Save"){
-                    bookViewModel.addNewBook(title: title, author: author, image: "harryPotter", genre: genre)
+                    let newBook = Book(
+                        title: title, author: author, image: "harry-potter", genre: genre
+                    )
+                    
+                    bookViewModel.addBook(book: newBook)
                     
                     title = ""
                     author = ""

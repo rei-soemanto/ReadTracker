@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DailyRead: Hashable, Identifiable {
+struct DailyRead: Hashable, Identifiable, Codable {
     let id = UUID()
     var book: Book
     var readDate: Date

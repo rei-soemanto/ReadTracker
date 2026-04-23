@@ -8,14 +8,20 @@
 import SwiftUI
 import Foundation
 import Combine
+import FirebaseDatabase
 import WatchConnectivity
 
 class BookViewModel: NSObject, ObservableObject, WCSessionDelegate {
     @Published var books = [Book]()
     var session: WCSession
     
+    private var ref: DatabaseReference
+    
     init(session: WCSession = .default) {
         self.session = session
+        
+        self.ref = Database.database().reference().child("books")
+        
         super.init()
         session.delegate = self
         session.activate()
@@ -56,5 +62,47 @@ class BookViewModel: NSObject, ObservableObject, WCSessionDelegate {
         print(filteredBooks)
         
         return filteredBooks
+    }
+    
+    func fetchBooks() {
+        ref.observe(.value) { snapshot in
+            guard let value = snapshot.value as? [String: Any] else {
+                self.books = []
+                return
+            }
+            
+            self.books = value.compactMap { (key, bookData) in
+                guard let bookDict = bookData as? [String: Any],
+                      let jsonData = try? JSONSerialization.data(withJSONObject: bookDict)
+                else {
+                    return nil
+                }
+                return try? JSONDecoder().decode(Book.self, from: jsonData)
+            }
+        }
+    }
+    
+    func addBook(book: Book) {
+        guard let jsonData = try? JSONEncoder().encode(book),
+            let json = try? JSONSerialization.jsonObject(with: jsonData)
+                as? [String: Any]
+        else {
+            return
+        }
+        ref.child(book.id.uuidString).setValue(json)
+    }
+    
+    func updateBook(book: Book) {
+        guard let jsonData = try? JSONEncoder().encode(book),
+            let json = try? JSONSerialization.jsonObject(with: jsonData)
+                as? [String: Any]
+        else {
+            return
+        }
+        ref.child(book.id.uuidString).setValue(json)
+    }
+    
+    func deleteBook(book: Book) {
+        ref.child(book.id.uuidString).removeValue()
     }
 }

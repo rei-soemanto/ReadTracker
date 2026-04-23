@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var authVM: AuthViewModel
+    @State var showAuthState = false
+    
     var body: some View {
         TabView {
             BookListView()
@@ -20,10 +23,18 @@ struct MainView: View {
                     Label("Read", systemImage: "book")
                 }
             
-            UserAccountView()
+            UserAccountView(showAuthSheet: $showAuthState)
                 .tabItem {
                     Label("Account", systemImage: "person")
                 }.badge("!")
+        }
+        
+        .onAppear {
+            showAuthState = !authVM.isSignedIn
+        }
+        
+        .sheet(isPresented: $showAuthState) {
+            LoginRegisterSheet(showAuthSheet: $showAuthState)
         }
     }
 }
@@ -32,4 +43,5 @@ struct MainView: View {
     MainView()
         .environmentObject(BookViewModel())
         .environmentObject(DailyReadViewModel())
+        .environmentObject(AuthViewModel())
 }

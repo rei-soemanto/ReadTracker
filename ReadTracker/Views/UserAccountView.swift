@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct UserAccountView: View {
+    @Binding var showAuthSheet: Bool
+    @EnvironmentObject var authVM: AuthViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("This is account view")
+        
+        Button("Logout") {
+            authVM.signOut()
+            authVM.checkUserSession()
+            showAuthSheet = !authVM.isSignedIn
+        }
+        .tint(.gray)
+        .buttonStyle(.borderedProminent)
     }
 }
 
 #Preview {
-    UserAccountView()
+    UserAccountView(showAuthSheet: .constant(true)).environmentObject(AuthViewModel())
 }

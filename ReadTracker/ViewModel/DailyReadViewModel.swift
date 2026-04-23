@@ -8,38 +8,45 @@
 import SwiftUI
 import Foundation
 import Combine
+import FirebaseDatabase
 
 class DailyReadViewModel: ObservableObject {
     
     @Published var dailyReads: [DailyRead] = []
+    
+    private var ref: DatabaseReference
 
     init() {
-        dailyReads.append(
-            DailyRead(
-                book: Book(
-                    title: "Harry Potter 1",
-                    author: "J. K. Rowling",
-                    image: "harry-potter",
-                    genre: "Fantasy"
-                ),
-                readDate: Date(),
-                readTimeInSeconds: 10,
-                note: "This is such a great book"
-            )
-        )
-        dailyReads.append(
-            DailyRead(
-                book: Book(
-                    title: "Harry Potter 2",
-                    author: "J. K. Rowling",
-                    image: "harry-potter",
-                    genre: "Fantasy"
-                ),
-                readDate: Calendar.current.date(from: DateComponents(year: 25, month: 3, day: 5)) ?? .now,
-                readTimeInSeconds: 2000,
-                note: "This is such a great book again"
-            )
-        )
+        self.ref = Database.database().reference().child("daily_read")
+        
+        fetchDailyRead()
+        
+//        dailyReads.append(
+//            DailyRead(
+//                book: Book(
+//                    title: "Harry Potter 1",
+//                    author: "J. K. Rowling",
+//                    image: "harry-potter",
+//                    genre: "Fantasy"
+//                ),
+//                readDate: Date(),
+//                readTimeInSeconds: 10,
+//                note: "This is such a great book"
+//            )
+//        )
+//        dailyReads.append(
+//            DailyRead(
+//                book: Book(
+//                    title: "Harry Potter 2",
+//                    author: "J. K. Rowling",
+//                    image: "harry-potter",
+//                    genre: "Fantasy"
+//                ),
+//                readDate: Calendar.current.date(from: DateComponents(year: 25, month: 3, day: 5)) ?? .now,
+//                readTimeInSeconds: 2000,
+//                note: "This is such a great book again"
+//            )
+//        )
     }
 
     func addNewDailyRead(dailyRead: DailyRead) {
@@ -101,5 +108,47 @@ class DailyReadViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func fetchDailyRead() {
+        ref.observe(.value) { snapshot in
+            guard let value = snapshot.value as? [String: Any] else {
+                self.dailyReads = []
+                return
+            }
+            
+            self.dailyReads = value.compactMap { (key, dailyReadData) in
+                guard let dailyReadDict = dailyReadData as? [String: Any],
+                      let jsonData = try? JSONSerialization.data(withJSONObject: dailyReadDict)
+                else {
+                    return nil
+                }
+                return try? JSONDecoder().decode(DailyRead.self, from: jsonData)
+            }
+        }
+    }
+    
+    func addDailyRead(dailyRead: DailyRead) {
+        guard let jsonData = try? JSONEncoder().encode(dailyRead),
+            let json = try? JSONSerialization.jsonObject(with: jsonData)
+                as? [String: Any]
+        else {
+            return
+        }
+        ref.child(dailyRead.id.uuidString).setValue(json)
+    }
+    
+    func updateDailyRead(dailyRead: DailyRead) {
+        guard let jsonData = try? JSONEncoder().encode(dailyRead),
+            let json = try? JSONSerialization.jsonObject(with: jsonData)
+                as? [String: Any]
+        else {
+            return
+        }
+        ref.child(dailyRead.id.uuidString).setValue(json)
+    }
+    
+    func deleteDailyRead(dailyRead: DailyRead) {
+        ref.child(dailyRead.id.uuidString).removeValue()
     }
 }

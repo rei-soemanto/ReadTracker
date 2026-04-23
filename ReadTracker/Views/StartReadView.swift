@@ -88,7 +88,7 @@ struct StartReadView: View {
                 Button("Save") {
                     let newDailyRead = DailyRead(book: book!, readDate: Date(), readTimeInSeconds: timeInSeconds, note: noteInput)
                     
-                    dailyReadViewModel.addNewDailyRead(dailyRead: newDailyRead)
+                    dailyReadViewModel.addDailyRead(dailyRead: newDailyRead)
                     
                     isReading = false
                     isPausing = false
